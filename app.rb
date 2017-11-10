@@ -21,6 +21,7 @@ get '/' do
 end
 
 get '/account' do
+
   erb :account
 end
 
@@ -33,7 +34,7 @@ get '/logout' do
   redirect '/'
 end
 
-post '/login' do
+post '/show' do
   username = params[:username].downcase
   user = User.find_or_create_by(username: username)
   session[:user_id] = user.id

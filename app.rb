@@ -20,6 +20,10 @@ get '/show' do
   erb :show
 end
 
+post '/show' do
+  
+end
+
 # Providing model information to the view
 # requires an instance variable (prefixing with the '@' symbol)
 

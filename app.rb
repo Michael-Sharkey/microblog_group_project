@@ -21,7 +21,6 @@ get '/' do
 end
 
 get '/account' do
-
   erb :account
 end
 

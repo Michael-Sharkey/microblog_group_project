@@ -28,12 +28,19 @@ get '/show' do
   erb :show
 end
 
+get '/logout' do
+  session.clear
+  redirect '/'
+end
+
 post '/show' do
   username = params[:username].downcase
   user = User.find_or_create_by(username: username)
   session[:user_id] = user.id
-  redirect "/todo"
+  redirect "/show"
 end
+
+
 
 # Providing model information to the view
 # requires an instance variable (prefixing with the '@' symbol)

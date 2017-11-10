@@ -21,11 +21,11 @@ get '/' do
 end
 
 get '/account' do
-
   erb :account
 end
 
 get '/show' do
+  authenticate_user
   erb :show
 end
 

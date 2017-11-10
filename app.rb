@@ -7,6 +7,14 @@ enable :sessions
 # Database configuration
 set :database, "sqlite3:development.sqlite3"
 
+def current_user
+  @user ||= User.find_by_id(session[:user_id])
+end
+
+def authenticate_user
+  redirect '/' if current_user.nil?
+end
+
 # Define routes below
 get '/' do
   erb :index
@@ -21,7 +29,10 @@ get '/show' do
 end
 
 post '/show' do
-  
+  username = params[:username].downcase
+  user = User.find_or_create_by(username: username)
+  session[:user_id] = user.id
+  redirect "/todo"
 end
 
 # Providing model information to the view

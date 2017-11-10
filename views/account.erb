@@ -3,3 +3,14 @@
 <h2>Update contact info</h2>
 
 <h2>Delete your account</h2>
+
+<section>
+  <h3>Your Shrieks!</h3>
+  <ul style="list-style-type:none">
+    <% @user.posts.each do |post| %>
+      <li>
+          <p><%= post.text %></p>
+      </li>
+    <% end %>
+  </ul>
+</section>

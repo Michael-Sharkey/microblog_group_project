@@ -21,6 +21,7 @@ get '/' do
 end
 
 get '/account' do
+  authenticate_user
   erb :account
 end
 
@@ -41,7 +42,11 @@ post '/login' do
   redirect "/show"
 end
 
-
+post '/show' do
+  authenticate_user
+  @user.posts.create(text: params[:text])
+  redirect '/account'
+end
 
 # Providing model information to the view
 # requires an instance variable (prefixing with the '@' symbol)

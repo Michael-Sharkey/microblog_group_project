@@ -25,6 +25,7 @@ get '/account' do
 end
 
 get '/show' do
+  authenticate_user
   erb :show
 end
 

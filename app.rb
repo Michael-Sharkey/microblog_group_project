@@ -34,7 +34,7 @@ get '/logout' do
   redirect '/'
 end
 
-post '/show' do
+post '/login' do
   username = params[:username].downcase
   user = User.find_or_create_by(username: username)
   session[:user_id] = user.id

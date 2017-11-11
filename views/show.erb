@@ -6,4 +6,20 @@
 <h2>See posts</h2>
 <h2>Add new post (if this is your own page)</h2>
 
-<textarea name="name" rows="8" cols="80">Here's some sample text.</textarea>
+<section>
+  <h3>Your Shrieks!</h3>
+  <ul style="list-style-type:none">
+    <% @user.posts.each do |post| %>
+      <li>
+          <p><%= post.text %></p>
+      </li>
+    <% end %>
+  </ul>
+</section>
+
+<form action="/show" method="post">
+
+
+<textarea name="text" rows="8" cols="80">Here's some sample text.</textarea>
+<input type="submit" value="Shrieks!">
+</form>

@@ -5,6 +5,12 @@
 <h2>Current Username</h2>
 <p> <%= @user.username %> </p>
 
+<form action="/changeusername" method="post">
+  <input type="text" name="username">
+  <input type="submit" value="Change">
+</form>
+
+
 <h2>Update contact info</h2>
 
 <h2>Delete your account</h2>

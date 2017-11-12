@@ -6,9 +6,15 @@
   <a href="/account">Account</a>
 
 
+<h2>Add new post (if this is your own page)</h2>
+
+<form action="/show" method="post">
+<textarea name="text" rows="8" cols="80" maxlength="280">Here's some sample text.</textarea>
+<input type="submit" value="Shrieks!">
+</form>
 
 <h2>See posts</h2>
-<h2>Add new post (if this is your own page)</h2>
+
 
 <section>
   <h3>Your Shrieks!</h3>
@@ -20,10 +26,3 @@
     <% end %>
   </ul>
 </section>
-
-<form action="/show" method="post">
-
-
-<textarea name="text" rows="8" cols="80" maxlength="280">Here's some sample text.</textarea>
-<input type="submit" value="Shrieks!">
-</form>

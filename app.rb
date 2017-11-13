@@ -3,6 +3,8 @@ require 'sinatra/reloader'
 require 'sinatra/activerecord'
 require './models'
 
+require 'pry'
+
 enable :sessions
 # Database configuration
 set :database, "sqlite3:development.sqlite3"
@@ -14,6 +16,7 @@ end
 def authenticate_user
   redirect '/' if current_user.nil?
 end
+
 
 # Define routes below
 get '/' do

@@ -9,6 +9,7 @@ gem 'sinatra-reloader'
 gem 'rspec'
 gem 'rack'
 gem 'rack-test'
+gem 'pry'
 
 # active record dependencies
 gem 'activerecord'

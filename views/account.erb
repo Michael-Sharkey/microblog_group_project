@@ -5,11 +5,14 @@
 <h2>Current Username</h2>
 <p> <%= @user.username %> </p>
 
+<!-- vvv not currently working vvv -->
+
 <form action="/changeusername" method="post">
   <input type="text" name="username">
   <input type="submit" value="Change">
 </form>
 
+<!-- ^^^ // ^^^ -->
 
 <h2>Update contact info</h2>
 

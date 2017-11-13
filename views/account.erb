@@ -19,3 +19,14 @@
 <h2>Delete your account</h2>
 
 <a href="<% @user.destroy %>">Delete account</a>
+
+<section>
+  <h3>Your Shrieks!</h3>
+  <ul style="list-style-type:none">
+    <% @user.posts.each do |post| %>
+      <li>
+          <p><%= post.text %></p>
+      </li>
+    <% end %>
+  </ul>
+</section>

@@ -18,6 +18,7 @@ def authenticate_user
 end
 
 
+
 # Define routes below
 get '/' do
   erb :index

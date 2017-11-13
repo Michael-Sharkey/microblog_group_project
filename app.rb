@@ -37,6 +37,12 @@ get '/logout' do
   redirect '/'
 end
 
+get '/deleteaccount' do
+  authenticate_user
+  @user.destroy
+  redirect '/'
+end
+
 post '/login' do
   user = User.find_or_create_by(username: params[:username])
   session[:user_id] = user.id

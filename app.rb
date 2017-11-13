@@ -17,8 +17,6 @@ def authenticate_user
   redirect '/' if current_user.nil?
 end
 
-
-
 # Define routes below
 get '/' do
   erb :index
@@ -40,8 +38,7 @@ get '/logout' do
 end
 
 post '/login' do
-  username = params[:username].downcase
-  user = User.find_or_create_by(username: username)
+  user = User.find_or_create_by(username: params[:username])
   session[:user_id] = user.id
   redirect "/show"
 end
@@ -52,11 +49,10 @@ post '/show' do
   redirect '/show'
 end
 
-# not currently working
-post '/changeusername' do
+# nots currently working
+patch '/location' do
   authenticate_user
-  @user.users.update(username: params[:username])
-  @user.save
+  current_user.update(location: params[:location])
   redirect '/account'
 end
 

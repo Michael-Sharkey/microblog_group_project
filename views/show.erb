@@ -30,7 +30,7 @@
 <section>
   <h3>Other Shrieks!</h3>
   <ul style="list-style-type:none">
-    <% Post.all.each do |post| %>
+    <% Post.last(10).reverse.each do |post| %>
     <li>
        <p><%= post.text %></p>
     </li>

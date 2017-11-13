@@ -15,18 +15,6 @@
 
 <h2>See posts</h2>
 
-
-<section>
-  <h3>Your Shrieks!</h3>
-  <ul style="list-style-type:none">
-    <% @user.posts.each do |post| %>
-      <li>
-          <p><%= post.text %></p>
-      </li>
-    <% end %>
-  </ul>
-</section>
-
 <section>
   <h3>Other Shrieks!</h3>
   <ul style="list-style-type:none">

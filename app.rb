@@ -3,6 +3,8 @@ require 'sinatra/reloader'
 require 'sinatra/activerecord'
 require './models'
 
+require 'pry'
+
 enable :sessions
 # Database configuration
 set :database, "sqlite3:development.sqlite3"
@@ -14,6 +16,7 @@ end
 def authenticate_user
   redirect '/' if current_user.nil?
 end
+
 
 # Define routes below
 get '/' do
@@ -44,9 +47,11 @@ end
 
 post '/show' do
   authenticate_user
-  @user.posts.create(text: params[:text])
+  @user.post.create(text: params[:text])
   redirect '/account'
 end
+
+
 
 # Providing model information to the view
 # requires an instance variable (prefixing with the '@' symbol)

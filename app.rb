@@ -55,11 +55,16 @@ post '/show' do
   redirect '/show'
 end
 
-# nots currently working
 patch '/location' do
   authenticate_user
   current_user.update(location: params[:location])
   redirect '/account'
+end
+
+get '/account/:id' do
+  authenticate_user
+  @target_user = User.find_by_id(params[:id])
+  erb :'other_users/account'
 end
 
 # Providing model information to the view

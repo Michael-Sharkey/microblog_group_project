@@ -4,3 +4,4 @@
 
 # e.g.
 # User.create(f_name: 'Bobby', l_name: 'McBobberson')
+User.all.create(location: 'default')

@@ -47,11 +47,17 @@ end
 
 post '/show' do
   authenticate_user
-  @user.post.create(text: params[:text])
-  redirect '/account'
+  @user.posts.create(text: params[:text])
+  redirect '/show'
 end
 
-
+# not currently working
+post '/changeusername' do
+  authenticate_user
+  @user.users.update(username: params[:username])
+  @user.save
+  redirect '/account'
+end
 
 # Providing model information to the view
 # requires an instance variable (prefixing with the '@' symbol)

@@ -1,13 +1,28 @@
 <h1>Welcome,
   <%= @user.username %></h1>
 <p>Your user id is
-  <%= @user.id %></p>
+  <%= @user.id %></p></h1>
 
-<h2>See posts</h2>
+  <a href="/account">Account</a>
+
+
 <h2>Add new post (if this is your own page)</h2>
 
-
-<form action="/show" method="post"
-<textarea><textarea name="name" rows="8" cols="80">Here's some sample text.</textarea>
+<form action="/show" method="post">
+<textarea name="text" rows="8" cols="80" maxlength="280">Here's some sample text.</textarea>
 <input type="submit" value="Shrieks!">
 </form>
+
+<h2>See posts</h2>
+
+
+<section>
+  <h3>Your Shrieks!</h3>
+  <ul style="list-style-type:none">
+    <% @user.posts.each do |post| %>
+      <li>
+          <p><%= post.text %></p>
+      </li>
+    <% end %>
+  </ul>
+</section>

@@ -1,16 +1,21 @@
 <h1>Account Info</h1>
+<h2>User ID</h2>
+<p><%= @user.id %></p>
+
+<h2>Current Username</h2>
+<p> <%= @user.username %> </p>
+
+<!-- vvv not currently working vvv -->
+
+<form action="/changeusername" method="post">
+  <input type="text" name="username">
+  <input type="submit" value="Change">
+</form>
+
+<!-- ^^^ // ^^^ -->
 
 <h2>Update contact info</h2>
 
 <h2>Delete your account</h2>
 
-<section>
-  <h3>Your Shrieks!</h3>
-  <ul style="list-style-type:none">
-    <% @user.posts.each do |post| %>
-      <li>
-          <p><%= @post.text %></p>
-      </li>
-    <% end %>
-  </ul>
-</section>
+<a href="<% @user.destroy %>">Delete account</a>

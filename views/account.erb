@@ -7,11 +7,15 @@
 
 <h2>Location</h2>
 <p> <%= @user.location %> </p>
+<p> <%= @user.age %> </p>
+<p> <%= @user.petpeeves %> </p>
 <!-- vvv not currently working vvv -->
 
 <form action="/location" method="post">
   <input type="hidden" name="_method" value="patch">
-  <input type="text" name="location">
+  <input type="text" name="location" value="<%= @user.location %>">
+  <input type="text" name="age" value="<%= @user.age %>">
+  <input type="text" name="petpeeves" value="<%= @user.petpeeves %>">
   <input type="submit" value="Change">
 </form>
 

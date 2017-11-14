@@ -4,4 +4,4 @@
 
 # e.g.
 # User.create(f_name: 'Bobby', l_name: 'McBobberson')
-User.create(username: 'admin', location: 'nowhere')
+User.create(username: 'admin', location: 'nowhere', age: 666, petpeeves: 'comics sans')

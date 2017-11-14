@@ -63,7 +63,7 @@ end
 
 patch '/location' do
   authenticate_user
-  current_user.update(location: params[:location])
+  current_user.update(location: params[:location], age: params[:age], petpeeves: params[:petpeeves])
   redirect '/account'
 end
 

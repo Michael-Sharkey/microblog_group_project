@@ -6,22 +6,23 @@ body {
   height: 100vh;
   width: 100vw;
   display: grid;
-  grid-template: "nav  nav  nav"  2fr
-                 "main main main" 7fr
+  grid-template: "nav  nav  nav"  3fr
+                 "main main main" 14fr
                  "foot foot foot" 1fr
                 /  1fr  3fr  1fr;
-  grid-gap: 10px;
   background-color: white;
 }
 
 nav {
-  background-color: rgb(196, 58, 40);
+  background-image: url(../../images/howler_nav.jpg);
+  background-position: center;
+  background-size: cover;
   grid-area: nav;
 }
 
 main {
   grid-area: main;
-  background-color: white;
+  background-color: rgba(196, 58, 40, 0.85);
   overflow-y: scroll;
 }
 
@@ -68,7 +69,6 @@ a {
   margin: 1em;
   text-decoration: none;
   color: white;
-
 }
 
 .feed {
@@ -79,12 +79,11 @@ a {
   grid-auto-rows: 50px;
   grid-gap: 5px;
   padding: 5px;
-  background-color: white;
+  background-color: rgba(196, 58, 40, 0.15);
 }
 
 .idColumn {
   grid-area: auto;
-  border: 1px solid black;
   border-radius: 8px;
   background-color: rgb(196, 58, 40);
 }

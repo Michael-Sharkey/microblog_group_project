@@ -3,7 +3,6 @@
   <head>
     <meta charset="utf-8">
     <title></title>
-    <link rel="stylesheet" href="/stylesheets/index.css">
   </head>
   <body>
       <nav>
@@ -14,7 +13,6 @@
         <% end %>
       </nav>
 
-   login_css
     <% if current_user %>
       <nav>
         <a href="/show">Shrieks</a>
@@ -29,12 +27,6 @@
       <%= yield %>
     </main>
 
-=======
-      <main>
-        <%= yield %>
-      </main>
-      <footer>Footer</footer>
- master
     <script src="/js/index.js"></script>
   </body>
 </html>

@@ -26,11 +26,22 @@
 
 <section>
   <h3>Other Shrieks!</h3>
-  <ul style="list-style-type:none">
+  <div class="postGrid">
     <% Post.last(10).reverse.each do |post| %>
-    <li>
-       <p><%= post.text %></p>
-    </li>
+    <div class="idColumn">
+      <ul>
+        <li>
+          <p> <a name="user_link" href="/account/<%= post.user_id %>"> <%= post.user_id.joins(user.username) %> </a> </p>
+        </li>
+      </ul>
+    </div>
+    <div class="textColumn">
+      <ul style="list-style-type:none">
+        <li>
+           <p><%= post.text %></p>
+        </li>
+      </ul>
+    </div>
     <% end %>
-  </ul>
+  </div>
 </section>

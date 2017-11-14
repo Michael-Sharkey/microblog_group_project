@@ -1,33 +1,37 @@
-<h1>Account Info</h1>
-<h2>User ID</h2>
-<p><%= @user.id %></p>
+<link rel="stylesheet" href="/stylesheets/account.css">
 
-<h2>Current Username</h2>
-<p> <%= @user.username %> </p>
 
-<h2>Location</h2>
-<p> <%= @user.location %> </p>
-<p> <%= @user.age %> </p>
-<p> <%= @user.petpeeves %> </p>
-<!-- vvv not currently working vvv -->
+<div class="info">
+  <div class="account-head">
+    <h1>Account Info</h1>
+    <h2>User ID</h2>
+    <p><%= @user.id %></p>
 
-<form action="/location" method="post">
-  <input type="hidden" name="_method" value="patch">
-  <input type="text" name="location" value="<%= @user.location %>">
-  <input type="text" name="age" value="<%= @user.age %>">
-  <input type="text" name="petpeeves" value="<%= @user.petpeeves %>">
-  <input type="submit" value="Change">
-</form>
+    <h2>Current Username</h2>
+    <p> <%= @user.username %> </p>
 
-<!-- ^^^ // ^^^ -->
+    <h2>Info</h2>
+    <p> <%= @user.location %> </p>
+    <p> <%= @user.age %> </p>
+    <p> <%= @user.petpeeves %> </p>
+  </div>
 
-<h2>Update contact info</h2>
+  <div class="change-info">
+    <form id="update-info" action="/info" method="post">
+      <input type="hidden" name="_method" value="patch">
+      <input type="text" name="location" value="<%= @user.location %>">
+      <input type="text" name="age" value="<%= @user.age %>">
+      <input type="text" name="petpeeves" value="<%= @user.petpeeves %>">
+      <input type="submit" value="Change">
+    </form>
+    <div class="delete-account">
+      <h2>Delete your account</h2>
+      <a href="/deleteaccount">Delete Account</a>
+    </div>
+  </div>
+</div>
 
-<h2>Delete your account</h2>
-
-<a href="/deleteaccount">Delete Account</a>
-
-<section>
+<div class="shrieks">
   <h3>Your Shrieks!</h3>
   <ul style="list-style-type:none">
     <% @user.posts.each do |post| %>
@@ -36,4 +40,4 @@
       </li>
     <% end %>
   </ul>
-</section>
+</div>

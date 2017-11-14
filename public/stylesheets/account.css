@@ -1,0 +1,43 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  width: 100vw;
+  display: grid;
+  grid-template: "nav  nav  nav"  3fr
+                 "main main main" 14fr
+                 "foot foot foot" 1fr
+                /  1fr  3fr  1fr;
+  background-color: white;
+}
+
+nav {
+  background-image: url(../../images/howler_nav.jpg);
+  background-position: center;
+  background-size: cover;
+  grid-area: nav;
+}
+
+main {
+  grid-area: main;
+  background-color: rgba(196, 58, 40, 0.85);
+  overflow-y: scroll;
+}
+
+footer {
+  grid-area: foot;
+  bottom: auto;
+}
+.info {
+  grid-area: auto;
+  background-color: rgba(196, 58, 40, 0.85);
+  overflow-y: scroll;
+}
+
+.shrieks {
+  grid-area: auto;
+  background-color: rgba(196, 58, 40, 0.85);
+  overflow-y: scroll;
+}

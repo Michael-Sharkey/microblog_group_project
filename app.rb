@@ -61,7 +61,7 @@ post '/show' do
   redirect '/show'
 end
 
-patch '/location' do
+patch '/info' do
   authenticate_user
   current_user.update(location: params[:location], age: params[:age], petpeeves: params[:petpeeves])
   redirect '/account'

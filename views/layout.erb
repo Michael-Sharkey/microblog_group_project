@@ -7,21 +7,12 @@
   <body>
       <nav>
         <% if current_user %>
+          <nav>
           <a href="/show">Shrieks</a>
           <a href="/account">Account</a>
           <a href="/logout">Log out</a>
+        </nav>
         <% end %>
-      </nav>
-
-    <% if current_user %>
-      <nav>
-        <a href="/show">Shrieks</a>
-        <a href="/account">Account</a>
-        <a href="/logout">Log out</a>
-      </nav>
-        <footer>Footer</footer>
-
-    <% end %>
 
     <main>
       <%= yield %>

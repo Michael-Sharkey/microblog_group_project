@@ -26,3 +26,11 @@ body {
 .username-box:focus {
     outline: none;
 }
+
+.submit-btn {
+  border-radius: 8px;
+  color: white;
+  background-color: black;
+  height: 25px;
+  border: none;
+}

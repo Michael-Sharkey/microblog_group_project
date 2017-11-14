@@ -7,18 +7,20 @@
   </head>
   <body>
 
-    <nav>
-      <% if current_user %>
+    <% if current_user %>
+      <nav>
         <a href="/show">Shrieks</a>
         <a href="/account">Account</a>
         <a href="/logout">Log out</a>
-      <% end %>
-    </nav>
+      </nav>
+        <footer>Footer</footer>
+
+    <% end %>
 
     <main>
       <%= yield %>
     </main>
-    <footer>Footer</footer>
+
     <script src="/js/index.js"></script>
   </body>
 </html>

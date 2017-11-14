@@ -17,6 +17,11 @@ def authenticate_user
   redirect '/' if current_user.nil?
 end
 
+def other_user
+  @other_user = Post.user_id
+end
+
+
 # Define routes below
 get '/' do
   erb :index

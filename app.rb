@@ -21,7 +21,11 @@ end
 
 # Define routes below
 get '/' do
-  erb :index
+  if current_user
+    redirect '/show'
+  else
+    erb :index
+  end
 end
 
 get '/account' do

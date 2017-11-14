@@ -1,18 +1,18 @@
 <h1>Account Info</h1>
 <h2>User ID</h2>
-<p><%= @target_user.id %></p>
+<p><%= @other_user.id %></p>
 
 <h2>Current Username</h2>
-<p> <%= @target_user.username %> </p>
+<p> <%= @other_user.username %> </p>
 
 <h2>Location</h2>
-<p> <%= @target_user.location %> </p>
+<p> <%= @other_user.location %> </p>
 
 
 <section>
   <h3>Your Shrieks!</h3>
   <ul style="list-style-type:none">
-    <% @target_user.posts.each do |post| %>
+    <% @other_user.posts.each do |post| %>
       <li>
           <p><%= post.text %></p>
       </li>

@@ -17,9 +17,6 @@ def authenticate_user
   redirect '/' if current_user.nil?
 end
 
-def other_user
-  @other_user = Post.user_id
-end
 
 
 # Define routes below
@@ -68,16 +65,6 @@ end
 
 get '/account/:id' do
   authenticate_user
-  @target_user = User.find_by_id(params[:id])
+  @other_user = User.find_by_id(params[:id])
   erb :'other_users/account'
 end
-
-# Providing model information to the view
-# requires an instance variable (prefixing with the '@' symbol)
-
-# Example 'User' index route
-
-# get '/users' do
-#   @users = User.all
-#   erb :users
-# end

@@ -1,19 +1,49 @@
-<h1>Welcome,
+<div class="display">
+
+
+    <form id="post" action="/show" method="post">
+    <textarea id="yell" name="text" rows="8" cols="80" maxlength="280">What's On Your Mind?</textarea>
+    <input type="submit" id="howl" value="Shriek!">
+    </form>
+
+  <div class="feed">
+      <% Post.last(10).reverse.each do |post| %>
+      <div class="idColumn">
+        <ul style="list-style-type:none">
+          <li>
+            <p> <a name="user_link" href="/account/<%= post.user_id %>"> <%= post.user.username %> </a> </p>
+          </li>
+        </ul>
+      </div>
+      <div class="textColumn">
+        <ul style="list-style-type:none">
+          <li>
+             <p><%= post.text %></p>
+          </li>
+        </ul>
+      </div>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+<!-- <h1>Welcome,
   <%= @user.username %></h1>
 <p>Your user id is
   <%= @user.id %></p></h1>
 
 <h2>Add new post (if this is your own page)</h2>
 
-<form action="/show" method="post">
-<textarea name="text" rows="8" cols="80" maxlength="280">Here's some sample text.</textarea>
-<input type="submit" value="Shrieks!">
-</form>
-
-<h2>See posts</h2>
 
 
-<section>
+<h2>See posts</h2> -->
+
+
+<!-- <section>
   <h3>Your Shrieks!</h3>
   <ul style="list-style-type:none">
     <% @user.posts.last(10).each do |post| %>
@@ -22,26 +52,4 @@
       </li>
     <% end %>
   </ul>
-</section>
-
-<section>
-  <h3>Other Shrieks!</h3>
-  <div class="postGrid">
-    <% Post.last(10).reverse.each do |post| %>
-    <div class="idColumn">
-      <ul>
-        <li>
-          <p> <a name="user_link" href="/account/<%= post.user_id %>"> <%= post.user.username %> </a> </p>
-        </li>
-      </ul>
-    </div>
-    <div class="textColumn">
-      <ul style="list-style-type:none">
-        <li>
-           <p><%= post.text %></p>
-        </li>
-      </ul>
-    </div>
-    <% end %>
-  </div>
-</section>
+</section> -->

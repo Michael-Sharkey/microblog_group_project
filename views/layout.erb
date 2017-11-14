@@ -6,7 +6,15 @@
     <link rel="stylesheet" href="/stylesheets/index.css">
   </head>
   <body>
+      <nav>
+        <% if current_user %>
+          <a href="/show">Shrieks</a>
+          <a href="/account">Account</a>
+          <a href="/logout">Log out</a>
+        <% end %>
+      </nav>
 
+   login_css
     <% if current_user %>
       <nav>
         <a href="/show">Shrieks</a>
@@ -21,6 +29,12 @@
       <%= yield %>
     </main>
 
+=======
+      <main>
+        <%= yield %>
+      </main>
+      <footer>Footer</footer>
+ master
     <script src="/js/index.js"></script>
   </body>
 </html>

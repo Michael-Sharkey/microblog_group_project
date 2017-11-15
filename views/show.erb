@@ -1,54 +1,38 @@
 <link rel="stylesheet" href="/stylesheets/show.css">
+
 <nav>
   <a href="/show">Shrieks</a>
   <a href="/account">Account</a>
   <a href="/logout">Log out</a>
 </nav>
+
 <main>
-  <div class="show-grid">
-    <div class="display">
-
-      <form id="post" action="/show" method="post">
-        <textarea id="yell" name="text" rows="8" cols="80" maxlength="280">What's On Your Mind?</textarea>
-        <input type="submit" id="howl" value="Shriek!">
-      </form>
-
-      <div class="feed">
-        <% Post.last(10).reverse.each do |post| %>
-        <div class="idColumn">
-          <ul style="list-style-type:none">
-            <li>
-              <p>
-                <a name="user_link" href="/account/<%= post.user_id %>">
-                  <%= post.user.username %>
-                </a>
-              </p>
-            </li>
-          </ul>
-        </div>
-        <div class="textColumn">
-          <ul style="list-style-type:none">
-            <li>
-              <p><%= post.text %></p>
-            </li>
-          </ul>
-        </div>
-        <% end %>
-
-
-<div class="display">
-
-
+  <div class="display">
     <form id="post" action="/show" method="post">
-    <textarea id="yell" name="text" rows="8" cols="80" maxlength="280">What's On Your Mind?</textarea>
-    <input type="submit" id="howl" value="Shriek!">
+      <textarea id="yell" name="text" rows="8" cols="80" maxlength="280">What's On Your Mind?</textarea>
+      <input type="submit" id="howl" value="Shriek!">
     </form>
-
-  <div class="feed">
+    <div class="feed">
       <% Post.last(10).reverse.each do |post| %>
+
       <div class="idColumn">
         <ul style="list-style-type:none">
           <li>
-            <p> <a name="user_link" href="/account/<%= post.user_id %>"> <%= post.user.username %> </a> </p>
+            <p>
+              <a name="user_link" href="/account/<%= post.user_id %>"><%= post.user.username %></a>
+            </p>
           </li>
         </ul>
+      </div>
+
+      <div class="textColumn">
+        <ul style="list-style-type:none">
+          <li>
+            <p><%= post.text %></p>
+          </li>
+        </ul>
+      </div>
+      <% end %>
+    </div>
+  </div>
+</main>

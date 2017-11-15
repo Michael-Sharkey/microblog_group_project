@@ -17,54 +17,6 @@ def authenticate_user
   redirect '/' if current_user.nil?
 end
 
-def howlify_post(raw_post)
-  output = raw_post.text.upcase
-
-  replacements = {
-    "CANNOT" => "CAN",
-    "CAN'T" => "CAN",
-    "WON'T" => "WILL",
-    "NOT" => '',
-    "COULDN'T" => "COULD",
-    "SHOULDN'T" => "SHOULD",
-    "WOULDN'T" => "WOULD",
-    "ISN'T" => "IS",
-    "AREN'T" => "ARE",
-    "DOES" => "DOESN'T",
-    "DO" => "DON'T",
-
-    "CAN" => "CAN'T",
-    "WILL" => "WON'T",
-    "COULD"=> "COULDN'T",
-    "SHOULD" => "SHOULDN'T",
-    "WOULD" => "WOULDN'T",
-    "IS" => "ISN'T",
-    "ARE" => "AREN'T",
-    "DOESN'T" => "DOES",
-    "DON'T" => "DO"
-  }
-
-
-  output = output.split(' ')
-  output = output.map do |e|
-    replacements.fetch(e, e)
-  end
-
-  output.delete('')
-  output = output.join(' ')
-
-  output.gsub! "THE ", "THE GODDAMN"
-  output.gsub! "A ", "A FREAKING "
-  output.gsub! "TO ", "TO DELRIOUSLY "
-
-  index = (rand() * 10).to_i
-  topicalArray = ["THANKS OBAMA, ", "GODDAMIT! ", "FOR THE LAST TIME, ", "WHY DOESN'T ANYONE REALIZE THAT ", "JESUS, ", "THE NEW WORLD ORDER! ", "THAT'S WHAT'S WRONG WITH THIS COUNTRY- ", "THIS IS THE LAST THING I NEED, ", "MY PARENTS NEVER LOVED ME, THAT'S WHY ", "NOOOOOOO, ", "YOU KNOW WHAT GRINDS MY GEARS - "]
-
-  output.gsub! '.', '!'
-  return topicalArray[index] + output + "!!!"
-end
-
-
 # Define routes below
 get '/' do
   if current_user

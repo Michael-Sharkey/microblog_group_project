@@ -1,5 +1,13 @@
 <link rel="stylesheet" href="/stylesheets/account.css">
 
+<nav>
+  <% if current_user %>
+    <nav>
+    <a href="/show">Shrieks</a>
+    <a href="/account">Account</a>
+    <a href="/logout">Log out</a>
+  </nav>
+  <% end %>
 
 <h1>Account Info</h1>
 <h2>User ID</h2>
@@ -8,10 +16,8 @@
 <h2>Current Username</h2>
 <p> <%= @other_user.username %> </p>
 
-<h2>Profile</h2>
-<p> Location: <%= @other_user.location %> </p>
-<p> Age: <%= @other_user.age %> </p>
-<p> Pet Peeves: <%= @other_user.petpeeves %> </p>
+<h2>Location</h2>
+<p> <%= @other_user.location %> </p>
 
 
 <section>

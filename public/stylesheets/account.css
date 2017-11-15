@@ -7,10 +7,10 @@ body {
   height: 100vh;
   width: 100vw;
   display: grid;
-  grid-template: "nav  nav  nav"  3fr
-                 "main main main" 14fr
-                 "foot foot foot" 1fr
-                /  1fr  3fr  1fr;
+  grid-template: "nav  nav"  3fr
+                 "main main" 14fr
+                 "foot foot" 1fr
+                /  1fr  1fr;
   background-color: white;
 }
 
@@ -23,8 +23,11 @@ nav {
 
 main {
   grid-area: main;
-  background-color: rgba(196, 58, 40, 0.85);
+  background-color: white;
   overflow-y: scroll;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr;
 }
 
 footer {
@@ -32,6 +35,7 @@ footer {
   bottom: auto;
 }
 
+.shrieks {
 a {
   color: white;
   text-decoration: none;
@@ -41,13 +45,7 @@ a:hover {
   color: black;
 }
 
-.info {
-  grid-area: auto;
-  background-color: rgba(196, 58, 40, 0.85);
-  overflow-y: scroll;
-}
-
-.shrieks {
+.info{
   grid-area: auto;
   background-color: rgba(196, 58, 40, 0.85);
   overflow-y: scroll;

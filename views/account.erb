@@ -1,43 +1,53 @@
 <link rel="stylesheet" href="/stylesheets/account.css">
 
+<nav>
+  <a href="/show">Shrieks</a>
+  <a href="/account">Account</a>
+  <a href="/logout">Log out</a>
+</nav>
+<main>
+    <div class="info">
+      <div class="account-head">
+        <h1>Account Info</h1>
+        <h2>User ID</h2>
+        <p><%= @user.id %></p>
 
-<div class="info">
-  <div class="account-head">
-    <h1>Account Info</h1>
-    <h2>User ID</h2>
-    <p><%= @user.id %></p>
+        <h2>Current Username</h2>
+        <p> <%= @user.username %> </p>
 
-    <h2>Current Username</h2>
-    <p> <%= @user.username %> </p>
+        <h2>Info</h2>
+        <p> <%= @user.location %> </p>
+        <p> <%= @user.age %> </p>
+        <p> <%= @user.petpeeves %> </p>
+      </div>
+
+      <div class="change-info">
+        <form id="update-info" action="/info" method="post">
+          <input type="hidden" name="_method" value="patch">
+          <input type="text" name="location" value="<%= @user.location %>">
+          <input type="text" name="age" value="<%= @user.age %>">
+          <input type="text" name="petpeeves" value="<%= @user.petpeeves %>">
+          <input type="submit" value="Change">
+        </form>
+        <div class="delete-account">
+          <h2>Delete your account</h2>
+          <a href="/deleteaccount">Delete Account</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="shrieks">
+      <h3>Your Shrieks!</h3>
+      <ul style="list-style-type:none">
+        <% @user.posts.each do |post| %>
+          <li>
+              <p><%= post.text %></p>
+          </li>
+        <% end %>
+      </ul>
 
     <h2>Info</h2>
     <p>Location: <%= @user.location %> </p>
     <p>Age: <%= @user.age %> </p>
     <p>Pet Peeves: <%= @user.petpeeves %> </p>
   </div>
-
-  <div class="change-info">
-    <form id="update-info" action="/info" method="post">
-      <input type="hidden" name="_method" value="patch">
-      Location: <input type="text" name="location" value="<%= @user.location %>"><br>
-      Age: <input type="text" name="age" value="<%= @user.age %>"><br>
-      Pet Peeves: <input type="text" name="petpeeves" value="<%= @user.petpeeves %>"><br>
-      <input type="submit" value="Change">
-    </form>
-    <div class="delete-account">
-      <h2>Delete your account</h2>
-      <a href="/deleteaccount">Delete Account</a>
-    </div>
-  </div>
-</div>
-
-<div class="shrieks">
-  <h3>Your Shrieks!</h3>
-  <ul style="list-style-type:none">
-    <% @user.posts.each do |post| %>
-      <li>
-          <p><%= post.text %></p>
-      </li>
-    <% end %>
-  </ul>
-</div>

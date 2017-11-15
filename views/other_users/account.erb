@@ -1,24 +1,38 @@
 <link rel="stylesheet" href="/stylesheets/account.css">
 
-<nav>
-  <% if current_user %>
-    <nav>
+
+
+  <nav>
     <a href="/show">Shrieks</a>
     <a href="/account">Account</a>
     <a href="/logout">Log out</a>
-  </nav>
-  <% end %>
+
 
 <h1>Account Info</h1>
 <h2>User ID</h2>
 <p><%= @other_user.id %></p>
 
+<br>
+
 <h2>Current Username</h2>
 <p> <%= @other_user.username %> </p>
+
+<br>
 
 <h2>Location</h2>
 <p> <%= @other_user.location %> </p>
 
+<br>
+
+<h2>Age</h2>
+<p> <%= @other_user.age %> </p>
+
+<br>
+
+<h2>Pet Peeves</h2>
+<p> <%= @other_user.petpeeves %> </p>
+
+<br>
 
 <section>
   <h3>Your Shrieks!</h3>
@@ -30,3 +44,4 @@
     <% end %>
   </ul>
 </section>
+</nav>

@@ -1,17 +1,29 @@
-<h1>Welcome,
-  <%= @user.username %></h1>
-<p>Your user id is
-  <%= @user.id %></p></h1>
+<link rel="stylesheet" href="/stylesheets/show.css">
 
-<h2>Add new post (if this is your own page)</h2>
+<nav>
+  <a href="/show">Shrieks</a>
+  <a href="/account">Account</a>
+  <a href="/logout">Log out</a>
+</nav>
 
-<form action="/show" method="post">
-<textarea name="text" rows="8" cols="80" maxlength="280">Here's some sample text.</textarea>
-<input type="submit" value="Shrieks!">
-</form>
+<main>
+  <div class="display">
+    <form id="post" action="/show" method="post">
+      <textarea id="yell" name="text" rows="8" cols="80" maxlength="280">What's On Your Mind?</textarea>
+      <input type="submit" id="howl" value="Shriek!">
+    </form>
+    <div class="feed">
+      <% Post.last(10).reverse.each do |post| %>
 
-<h2>See posts</h2>
-
+      <div class="idColumn">
+        <ul style="list-style-type:none">
+          <li>
+            <p>
+              <a name="user_link" href="/account/<%= post.user_id %>"><%= post.user.username %></a>
+            </p>
+          </li>
+        </ul>
+      </div>
 
 <section>
   <h3>Your Shrieks!</h3>
@@ -90,7 +102,7 @@ puts topicalArray[index] + output + "!!!"
            <p><%= post.text %></p>
         </li>
       </ul>
+
     </div>
-    <% end %>
   </div>
-</section>
+</main>

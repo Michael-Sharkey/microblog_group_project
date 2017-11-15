@@ -1,0 +1,77 @@
+* {
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+body {
+  height: 100vh;
+  width: 100vw;
+  display: grid;
+  grid-template: "nav  nav"  3fr
+                 "main main" 14fr
+                 "foot foot" 1fr
+                /  1fr  1fr;
+  background-color: white;
+}
+
+nav {
+  background-image: url(../../images/howler_nav.jpg);
+  background-position: center;
+  background-size: cover;
+  grid-area: nav;
+}
+
+main {
+  grid-area: main;
+  background-color: white;
+  overflow-y: scroll;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr;
+  padding-left: 10px;
+  padding-top: 10px;
+  grid-gap: 10px;
+}
+
+footer {
+  grid-area: foot;
+  bottom: auto;
+}
+
+.shrieks {
+  grid-area: auto;
+  color: white;
+  text-decoration: none;
+  border: 1px solid black;
+  background-color: rgba(196, 58, 40, 0.85);
+
+}
+
+a:hover {
+  color: black;
+}
+
+.info {
+  grid-area: auto;
+  background-color: rgba(196, 58, 40, 0.85);
+  border: 1px solid black;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 100px 1fr 50px;
+}
+
+.account-head {
+  grid-area: 1 / 1 / span 1 / span 2;
+}
+
+.account-info {
+  grid-area: 2 / 1 / span 1 / span 1;
+}
+
+.update-info {
+  grid-area: 2 / 2/ span 1 / span 1;
+}
+
+.delete-account {
+  grid-area: 3 / 2 / span 1 / span 1;
+}

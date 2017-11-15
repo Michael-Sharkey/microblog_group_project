@@ -67,7 +67,11 @@ end
 
 # Define routes below
 get '/' do
-  erb :index
+  if current_user
+    redirect '/show'
+  else
+    erb :index
+  end
 end
 
 get '/account' do
@@ -103,9 +107,9 @@ post '/show' do
   redirect '/show'
 end
 
-patch '/location' do
+patch '/info' do
   authenticate_user
-  current_user.update(location: params[:location])
+  current_user.update(location: params[:location], age: params[:age], petpeeves: params[:petpeeves])
   redirect '/account'
 end
 

@@ -1,3 +1,14 @@
+<link rel="stylesheet" href="/stylesheets/account.css">
+
+<nav>
+  <% if current_user %>
+    <nav>
+    <a href="/show">Shrieks</a>
+    <a href="/account">Account</a>
+    <a href="/logout">Log out</a>
+  </nav>
+  <% end %>
+
 <h1>Account Info</h1>
 <h2>User ID</h2>
 <p><%= @other_user.id %></p>

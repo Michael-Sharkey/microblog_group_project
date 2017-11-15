@@ -53,12 +53,9 @@ def howlify_post(raw_post)
   output.delete('')
   output = output.join(' ')
 
-  output.gsub! "I ", "THIS FILTH"
-  output.gsub! "I'M", "THIS FILTH ISN'T"
-  output.gsub! "I'LL", "THIS FILTH WON'T"
   output.gsub! "THE ", "THE GODDAMN"
   output.gsub! "A ", "A FREAKING "
-  output.gsub! "TO ", "TO DISGUSTINGLY "
+  output.gsub! "TO ", "TO DELRIOUSLY "
 
   index = (rand() * 10).to_i
   topicalArray = ["THANKS OBAMA, ", "GODDAMIT! ", "FOR THE LAST TIME, ", "WHY DOESN'T ANYONE REALIZE THAT ", "JESUS, ", "THE NEW WORLD ORDER! ", "THAT'S WHAT'S WRONG WITH THIS COUNTRY- ", "THIS IS THE LAST THING I NEED, ", "MY PARENTS NEVER LOVED ME, THAT'S WHY ", "NOOOOOOO, ", "YOU KNOW WHAT GRINDS MY GEARS - "]

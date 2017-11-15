@@ -1,5 +1,6 @@
 * {
   box-sizing: border-box;
+  font-family: sans-serif;
 }
 
 body {
@@ -35,9 +36,13 @@ footer {
 }
 
 .shrieks {
-  grid-area: auto;
-  background-color: rgba(196, 58, 40, 0.85);
-  overflow-y: scroll;
+a {
+  color: white;
+  text-decoration: none;
+}
+
+a:hover {
+  color: black;
 }
 
 .info{

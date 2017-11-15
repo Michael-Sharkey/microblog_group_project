@@ -34,32 +34,21 @@
           </ul>
         </div>
         <% end %>
-      </div>
-    </div>
-  </div>
-</main>
-
-<footer>footer</footer>
 
 
-<!-- <h1>Welcome,
-  <%= @user.username %></h1>
-<p>Your user id is
-  <%= @user.id %></p></h1>
-
-<h2>Add new post (if this is your own page)</h2>
+<div class="display">
 
 
+    <form id="post" action="/show" method="post">
+    <textarea id="yell" name="text" rows="8" cols="80" maxlength="280">What's On Your Mind?</textarea>
+    <input type="submit" id="howl" value="Shriek!">
+    </form>
 
-<h2>See posts</h2> -->
-
-<!-- <section>
-  <h3>Your Shrieks!</h3>
-  <ul style="list-style-type:none">
-    <% @user.posts.last(10).each do |post| %>
-      <li>
-          <p><%= post.text %>!!!</p>
-      </li>
-    <% end %>
-  </ul>
-</section> -->
+  <div class="feed">
+      <% Post.last(10).reverse.each do |post| %>
+      <div class="idColumn">
+        <ul style="list-style-type:none">
+          <li>
+            <p> <a name="user_link" href="/account/<%= post.user_id %>"> <%= post.user.username %> </a> </p>
+          </li>
+        </ul>

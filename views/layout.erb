@@ -4,11 +4,21 @@
     <meta charset="utf-8">
     <title></title>
 
+    <link rel="stylesheet" href="https://meyerweb.com/eric/tools/css/reset/reset.css">
   </head>
   <body>
 
+    <main>
       <%= yield %>
+    </main>
 
+        <% if current_user %>
+        <nav>
+          <a href="/show">Shrieks</a>
+          <a href="/account">Account</a>
+          <a href="/logout">Log out</a>
+        </nav>
+        <% end %>
     <script src="/js/index.js"></script>
   </body>
 </html>

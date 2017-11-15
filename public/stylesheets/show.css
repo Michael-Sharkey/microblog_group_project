@@ -1,6 +1,8 @@
 * {
   box-sizing: border-box;
+  font-family: sans-serif;
 }
+
 body {
   height: 100vh;
   width: 100vw;
@@ -35,6 +37,10 @@ a {
   text-decoration: none;
 }
 
+a:hover {
+  color: black;
+}
+
 .display {
   display: grid;
   grid-template-columns: 1fr 3fr 1fr;
@@ -46,7 +52,7 @@ a {
 #post {
   grid-column: 2 / 3;
   grid-row: 1 / 1;
-  border: 1px solid gray;
+  border: none;
   border-radius: 8px;
   height: 100px;
   width: 100%;
@@ -57,7 +63,7 @@ a {
 
 #yell {
   grid-area: 1 / 1 / span 3 / span 3;
-  border: 3px solid gray;
+  border: none;
   border-radius: 8px;
 }
 

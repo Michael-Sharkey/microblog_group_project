@@ -43,10 +43,11 @@
 
   <div class="shrieks">
     <h3>Your Shrieks!</h3>
+    <br>
     <ul style="list-style-type:none">
       <% @user.posts.each do |post| %>
       <li>
-        <p><%= post.text %></p>
+        <p><%= post.text %></p><br> 
       </li>
       <% end %>
     </ul>

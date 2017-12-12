@@ -105,7 +105,9 @@ textarea{
   border-radius: 8px;
   background-color: #8A1300;
   padding-top: 8px;
+  padding-left: 4px; 
   font-family: Frijole;
+  font-weight: lighter;
   font-size: 13px;
   color: #FFBC2B;
 }
@@ -118,6 +120,8 @@ textarea{
   padding-left: 3px;
   font-size: 15px;
   font-family: Nosifer;
+  font-weight: lighter;
+  color: #653101;
   background-color: #EC644F;
 }
 

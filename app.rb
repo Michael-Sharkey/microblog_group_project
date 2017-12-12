@@ -95,7 +95,7 @@ def howlify(input)
     "IS" => "ISN'T",
     "ARE" => "AREN'T",
     "DOESN'T" => "DOES",
-    "DON'T" => "DO" 
+    "DON'T" => "DO"
   }
 
 
@@ -106,16 +106,14 @@ def howlify(input)
 
   output.delete('')
   output = output.join(' ')
+  output.prepend(" ")
 
-  output.gsub! "I ", "THIS FILTH "
-  output.gsub! "I'M", "THIS FILTH ISN'T"
-  output.gsub! "I'LL", "THIS FILTH WON'T"
-  output.gsub! "THE ", "THE GODDAMN "
-  output.gsub! "A ", "A FREAKING "
-  output.gsub! "TO ", "TO DISGUSTINGLY "
+  output.gsub! " THE ", " THE GODDAMN "
+  output.gsub! " A ", " A FREAKING "
+  output.gsub! " TO ", " TO DISGUSTINGLY "
 
   index = (rand() * 10).to_i
-  topicalArray = ["THANKS OBAMA, ", "GODDAMIT! ", "FOR THE LAST TIME, ", "WHY DOESN'T ANYONE REALIZE THAT ", "JESUS, ", "THE NEW WORLD ORDER! ", "THAT'S WHAT'S WRONG WITH THIS COUNTRY- ", "THIS IS THE LAST THING I NEED, ", "MY PARENTS NEVER LOVED ME, THAT'S WHY ", "NOOOOOOO, ", "YOU KNOW WHAT GRINDS MY GEARS - "]
+  topicalArray = ["THANKS OBAMA,", "GODDAMIT!", "FOR THE LAST TIME,", "WHY DOESN'T ANYONE REALIZE THAT", "JESUS,", "THE NEW WORLD ORDER!", "THAT'S WHAT'S WRONG WITH THIS COUNTRY-", "THIS IS THE LAST THING I NEED,", "MY PARENTS NEVER LOVED ME, THAT'S WHY", "NOOOOOOO,", "YOU KNOW WHAT GRINDS MY GEARS -"]
 
   output.gsub! '.', '!!!'
   return topicalArray[index] + output + "!!!"

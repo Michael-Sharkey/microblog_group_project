@@ -1,6 +1,6 @@
 * {
   box-sizing: border-box;
-  font-family: sans-serif;
+  font-family: Spectral SC;
 }
 
 body {
@@ -19,6 +19,13 @@ nav {
   background-position: center;
   background-size: cover;
   grid-area: nav;
+  padding-top: 10px;
+}
+
+nav > a{
+  padding-left: 30px;
+  color: yellow;
+  font-size: 25px;
 }
 
 main {

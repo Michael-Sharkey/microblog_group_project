@@ -55,7 +55,7 @@ end
 
 post '/show' do
   authenticate_user
-  @user.posts.create(text: params[:text])
+  @user.posts.create(text: howlify(params[:text])) 
   redirect '/show'
 end
 
@@ -107,10 +107,10 @@ def howlify(input)
   output.delete('')
   output = output.join(' ')
 
-  output.gsub! "I ", "THIS FILTH"
+  output.gsub! "I ", "THIS FILTH "
   output.gsub! "I'M", "THIS FILTH ISN'T"
   output.gsub! "I'LL", "THIS FILTH WON'T"
-  output.gsub! "THE ", "THE GODDAMN"
+  output.gsub! "THE ", "THE GODDAMN "
   output.gsub! "A ", "A FREAKING "
   output.gsub! "TO ", "TO DISGUSTINGLY "
 

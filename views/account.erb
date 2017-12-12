@@ -36,7 +36,6 @@
     </div>
 
     <div class="delete-account">
-      <h2>Delete your account</h2>
       <a href="/deleteaccount">Delete Account</a>
     </div>
   </div>
@@ -47,7 +46,7 @@
     <ul style="list-style-type:none">
       <% @user.posts.each do |post| %>
       <li>
-        <p><%= post.text %></p><br> 
+        <p><%= post.text %></p><br>
       </li>
       <% end %>
     </ul>

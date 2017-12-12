@@ -9,10 +9,19 @@ body {
 }
 
 .login-form {
-    grid-area: 3 / 2 / span 1 / span 1;
+    grid-column: 2 / 3;
+    grid-row: 3 / 4;
     font-family: sans-serif;
-    display: grid;
+}
 
+.banner{
+  padding-top: 30px;
+  grid-column: 1 / 4;
+  grid-row: 1 / 2;
+  text-align: center;
+  font-family: Frijole;
+  font-size: 100px;
+  color: #FFBC2B;
 }
 
 .username-box {

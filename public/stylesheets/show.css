@@ -41,7 +41,7 @@ footer {
 }
 
 a {
-  color: white;
+  color: #FFBC2B;;
   text-decoration: none;
 }
 
@@ -98,13 +98,16 @@ textarea{
   grid-gap: 5px;
   padding: 5px;
   background-color: rgba(196, 58, 40, 0.15);
-  font-family: Nosifer;
 }
 
 .idColumn {
   grid-area: auto;
   border-radius: 8px;
-  background-color: rgb(196, 58, 40);
+  background-color: #8A1300;
+  padding-top: 8px;
+  font-family: Frijole;
+  font-size: 13px;
+  color: #FFBC2B;
 }
 
 .textColumn {
@@ -114,6 +117,8 @@ textarea{
   padding-top: 8px;
   padding-left: 3px;
   font-size: 15px;
+  font-family: Nosifer;
+  background-color: #EC644F;
 }
 
 

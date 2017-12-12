@@ -1,3 +1,4 @@
+<link href="https://fonts.googleapis.com/css?family=Frijole|Nosifer|Spectral+SC" rel="stylesheet">
 <link rel="stylesheet" href="/stylesheets/account.css">
 
 <nav>
@@ -9,25 +10,17 @@
 <main>
   <div class="info">
     <div class="account-head">
-      <h2>User ID</h2>
-      <p><%= @user.id %></p>
-      <h2>Current Username</h2>
-      <p>
-        <%= @user.username %>
-      </p>
+      <h3>User ID: <%= @user.id %></h3>
+      <br>
+      <h3>Current Username:  <%= @user.username %></h3>
     </div>
 
     <div class="account-info">
       <h2>Account Info</h2>
-      <p>
-        <%= @user.location %>
-      </p>
-      <p>
-        <%= @user.age %>
-      </p>
-      <p>
-        <%= @user.petpeeves %>
-      </p>
+      <br>
+      <h3>Location:  <%= @user.location %></h3>
+      <h3>Age:  <%= @user.age %></h3>
+      <h3>Pet Peeves:  <%= @user.petpeeves %></h3>
     </div>
 
     <div class="change-info">
@@ -41,17 +34,17 @@
     </div>
 
     <div class="delete-account">
-      <h2>Delete your account</h2>
       <a href="/deleteaccount">Delete Account</a>
     </div>
   </div>
 
   <div class="shrieks">
     <h3>Your Shrieks!</h3>
+    <br>
     <ul style="list-style-type:none">
       <% @user.posts.each do |post| %>
       <li>
-        <p><%= post.text %></p>
+        <p><%= post.text %></p><br>
       </li>
       <% end %>
     </ul>

@@ -55,7 +55,7 @@ end
 
 post '/show' do
   authenticate_user
-  @user.posts.create(text: howlify(params[:text])) 
+  @user.posts.create(text: howlify(params[:text]))
   redirect '/show'
 end
 
@@ -95,7 +95,7 @@ def howlify(input)
     "IS" => "ISN'T",
     "ARE" => "AREN'T",
     "DOESN'T" => "DOES",
-    "DON'T" => "DO"
+    "DON'T" => "DO" 
   }
 
 

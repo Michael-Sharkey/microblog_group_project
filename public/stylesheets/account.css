@@ -60,6 +60,7 @@ input[type="text"]{
 }
 
 .shrieks {
+  padding-top: 10px;
   grid-area: auto;
   color: #653101;
   text-decoration: none;
@@ -73,6 +74,7 @@ a:hover {
 }
 
 .info {
+  padding-top: 10px;
   grid-area: auto;
   background-color: rgba(196, 58, 40, 0.85);
   border: 1px solid black;

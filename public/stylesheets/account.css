@@ -11,7 +11,7 @@ body {
                  "main main" 14fr
                  "foot foot" 1fr
                 /  1fr  1fr;
-  background-color: white;
+  background-color: #DD6756;
 }
 
 nav {
@@ -31,9 +31,15 @@ nav > a {
   text-decoration: none;
 }
 
+a{
+  font-family: Frijole;
+  text-decoration: none;
+  color: #653101;
+}
+
 main {
   grid-area: main;
-  background-color: white;
+  background-color: #DD6756;
   overflow-y: scroll;
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -48,12 +54,18 @@ footer {
   bottom: auto;
 }
 
+input[type="text"]{
+  background-color: #DD6756;
+  border-color: #DD6756;
+}
+
 .shrieks {
   grid-area: auto;
-  color: white;
+  color: #653101;
   text-decoration: none;
   border: 1px solid black;
   background-color: rgba(196, 58, 40, 0.85);
+  font-family: Nosifer;
 
 }
 
@@ -68,6 +80,8 @@ a:hover {
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 100px 1fr 50px;
+  font-family: Nosifer;
+  color: #653101;
 }
 
 .account-head {
